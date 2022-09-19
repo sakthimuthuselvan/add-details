@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./sak.js"></script>
+    <title>Document</title>
+    <style>
+
+        body{
+            text-align: center;
+            margin: 0 auto;
+        }
+         table,tr,th,td{
+            border: 1px solid;
+            padding: 10px 20px;
+            border-collapse: collapse;
+        }
+        table{
+            width:700px;
+            text-align: center;
+            margin-left: 300px;
+        }
+        .box{
+            padding: 50px 20px;
+        }
+        input,button{
+            margin-right:20px;
+        }
+        input{
+            width:250px;
+            height:25px;
+            text-indent: 10px;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    
+ <h1>model table</h1>
+	<table id="sakthi">
+		<tr>
+			<th>name</th>
+			<th>address</th>
+			<th>phone number</th>
+            <th>submit</th>
+            <th>details</th>
+		</tr>
+		<tr id="list">
+			
+		</tr>
+	</table>
+    <div class="box">
+            <input type="text" id="name" placeholder="Enter your name">
+			<input type="text" id="address" placeholder="enter your address">
+		    <input type="text" id="pnumber" placeholder="enter your phone number">
+                <button id="click">click</button>
+                
+
+                <!-- <br>
+                <br>
+                <input type="text" id="user">
+                <input type="text" id="user1">
+                <input type="text" id="output">
+            <button onclick="add()">enter</button>
+
+            <p id="total"></p> -->
+
+            </div>     
+            <script>
+               
+                var name,adddress,pnumber;
+                
+                let userName=document.getElementById("name");
+                let userAddress=document.getElementById("address");
+                let userPnumber=document.getElementById("pnumber");
+                let submit=document.getElementById("click");
+                
+                
+
+               
+               let fun=function(){
+                if(userName!==""){
+                    let table=document.getElementById("sakthi");
+                    let row=document.getElementById("list");
+                    
+                     let  r=table.insertRow(table.length);
+                     let cell1=r.insertCell(0);
+                     let cell2=r.insertCell(1);
+                     let cell3=r.insertCell(2);
+                     let cell4=r.insertCell(3);
+                     let cell5=r.insertCell(4);
+
+
+                    cell1.innerText=userName.value;
+                    cell2.innerText=userAddress.value;
+                    cell3.innerText=userPnumber.value;
+
+
+                    userName.value="";
+                    userAddress.value="";
+                   userPnumber.value ="";
+                   
+
+                    let a=document.createElement("button");
+                    a.innerText="Edit";
+                    cell4.appendChild(a);
+
+
+                    let btn=document.createElement("button");
+
+                    btn.innerText="delete";
+                    cell5.appendChild(btn);
+                
+                    function edit(){
+            
+                    userName.value = cell1.innerText; 
+                    userAddress.value = cell2.innerText;
+                    userPnumber.value=cell3.innerText;
+                
+                }
+                a.addEventListener("click",function(){
+
+                    edit();
+                })
+
+              
+
+              
+
+
+
+                }
+
+                }
+               
+                
+                submit.addEventListener("click",function(){
+                    fun();
+                })
+
+
+               
+
+
+
+
+            
+
+              </script>
+ </body>
+</html>
